@@ -1,3 +1,14 @@
-.App {
-  text-align: center;
+/* Ensure the layout is mobile-friendly */
+@media (max-width: 768px) {
+  .quadrants {
+    grid-template-columns: 1fr;  /* Stack quadrants on small screens */
+  }
+
+  h1 {
+    font-size: 2rem;  /* Adjust Sassanta title size for mobile */
+  }
+
+  .task-item p {
+    font-size: 1rem;  /* Ensure task descriptions are readable on mobile */
+  }
 }

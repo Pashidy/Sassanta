@@ -6,10 +6,12 @@ const TaskManager = () => {
   const [taskName, setTaskName] = useState('');
   const [priority, setPriority] = useState('low');
   const [category, setCategory] = useState('work');
+  const [urgency, setUrgency] = useState('notUrgent');
+  const [importance, setImportance] = useState('notImportant');
 
   // Add new task
   const addTask = () => {
-    const newTask = { name: taskName, priority, category, id: Date.now() };
+    const newTask = { name: taskName, priority, category, urgency, importance, id: Date.now() };
     setTasks([...tasks, newTask]);
     setTaskName('');  // Clear input field
   };
@@ -18,6 +20,11 @@ const TaskManager = () => {
   const deleteTask = (id) => {
     const updatedTasks = tasks.filter(task => task.id !== id);
     setTasks(updatedTasks);
+  };
+
+  // Filter tasks by quadrant
+  const filterTasks = (urgency, importance) => {
+    return tasks.filter(task => task.urgency === urgency && task.importance === importance);
   };
 
   return (
@@ -39,17 +46,59 @@ const TaskManager = () => {
           <option value="work">Work</option>
           <option value="personal">Personal</option>
         </select>
-	<button onClick={addTask}>Add Task</button>
+        <select value={urgency} onChange={(e) => setUrgency(e.target.value)}>
+          <option value="urgent">Urgent</option>
+          <option value="notUrgent">Not Urgent</option>
+        </select>
+        <select value={importance} onChange={(e) => setImportance(e.target.value)}>
+          <option value="important">Important</option>
+          <option value="notImportant">Not Important</option>
+        </select>
+        <button onClick={addTask}>Add Task</button>
+      </div>
+
+      <div className="quadrants">
+        <div className="quadrant">
+          <h3>Urgent & Important</h3>
+          {filterTasks('urgent', 'important').map(task => (
+            <div key={task.id} className="task-item">
+              <p>{task.name}</p>
+              <button onClick={() => deleteTask(task.id)}>Delete</button>
+            </div>
+          ))}
+        </div>
+
+        <div className="quadrant">
+          <h3>Not Urgent & Not Important</h3>
+          {filterTasks('notUrgent', 'notImportant').map(task => (
+            <div key={task.id} className="task-item">
+              <p>{task.name}</p>
+              <button onClick={() => deleteTask(task.id)}>Delete</button>
+            </div>
+          ))}
+        </div>
+
+        <div className="quadrant">
+          <h3>Not Urgent but Important</h3>
+          {filterTasks('notUrgent', 'important').map(task => (
+            <div key={task.id} className="task-item">
+              <p>{task.name}</p>
+              <button onClick={() => deleteTask(task.id)}>Delete</button>
+            </div>
+          ))}
+        </div>
+
+        <div className="quadrant">
+          <h3>Urgent but Not Important</h3>
+          {filterTasks('urgent', 'notImportant').map(task => (
+            <div key={task.id} className="task-item">
+              <p>{task.name}</p>
+              <button onClick={() => deleteTask(task.id)}>Delete</button>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-    <div className="task-list">
-      {tasks.map(task => (
-	<div key={task.id} className="task-item">
-	  <p>{task.name} - {task.priority} - {task.category}</p>
-	  <button onClick={() => deleteTask(task.id)}>Delete</button>
-	</div>
-      ))}
-    </div>
-  </div>
   );
 };
 
