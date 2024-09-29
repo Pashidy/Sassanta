@@ -1,0 +1,15 @@
+.task-history {
+  background-color: #400000;
+  color: white;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}

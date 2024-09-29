@@ -1,0 +1,49 @@
+.quadrant-page {
+  text-align: center;
+  color: white;
+  background-color: #400000;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quadrant-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: grid;
+  grid-template-areas:
+    "q1 q2"
+    "q3 q4";
+  gap: 10px;
+}
+
+.quadrant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.urgent-important {
+  background-color: #FF6347;
+  grid-area: q1;
+}
+
+.not-urgent-important {
+  background-color: #20B2AA;
+  grid-area: q2;
+}
+
+.urgent-not-important {
+  background-color: #4682B4;
+  grid-area: q3;
+}
+
+.not-urgent-not-important {
+  background-color: #DAA520;
+  grid-area: q4;
+}

@@ -1,0 +1,20 @@
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #400000; /* Deep glossy oxblood */
+  color: white;
+  animation: fadeOut 12s ease-in-out forwards;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}

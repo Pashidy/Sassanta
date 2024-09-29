@@ -1,0 +1,29 @@
+.landing-page {
+  text-align: center;
+  background-color: #400000;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icon-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-icon {
+  background-color: #ffffff;
+  color: #400000;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.menu-icon.inactive {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
