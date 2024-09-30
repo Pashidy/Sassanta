@@ -6,6 +6,8 @@ const PriorityTaskPage = ({ priorityName }) => {
   const [newTaskName, setNewTaskName] = useState('');
   const [taskTimers, setTaskTimers] = useState({});
 
+  console.log('PriorityTaskPage rendering for:', priorityName);
+
   // Handle adding a new task
   const handleAddTask = () => {
     const newTask = {
@@ -56,7 +58,6 @@ const PriorityTaskPage = ({ priorityName }) => {
         />
         <button onClick={handleAddTask}>Add Task</button>
       </div>
-
       <div className="task-list">
         {tasks.map(task => (
           <div key={task.id} className="task-item">
