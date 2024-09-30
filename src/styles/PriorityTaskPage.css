@@ -1,0 +1,45 @@
+.priority-page {
+  background-color: #400000;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.task-input {
+  margin: 20px 0;
+}
+
+.task-input input {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.task-list {
+  margin-top: 20px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: #660000;
+}
+
+.task-item p {
+  margin: 0;
+}
+
+.task-item button {
+  padding: 10px;
+  background-color: white;
+  color: #400000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
