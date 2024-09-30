@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './SplashScreen.css';
+import './styles/SplashScreen.css';
 
 const SplashScreen = () => {
   const [isVisible, setIsVisible] = useState(true);

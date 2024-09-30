@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './QuadrantPage.css';
+import './styles/QuadrantPage.css';
 
 const QuadrantPage = () => {
   const navigate = useNavigate();
