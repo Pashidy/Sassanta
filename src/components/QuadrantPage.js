@@ -1,12 +1,12 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './QuadrantPage.css';
 
 const QuadrantPage = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleQuadrantClick = (priority) => {
-    history.push(`/tasks/${priority}`);
+    navigate(`/tasks/${priority}`);
   };
 
   return (

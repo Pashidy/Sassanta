@@ -1,9 +1,9 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 
 const LandingPage = ({ lastTask }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <div className="landing-page">
@@ -11,14 +11,14 @@ const LandingPage = ({ lastTask }) => {
       <div className="icon-menu">
         <div 
           className={`menu-icon ${lastTask ? '' : 'inactive'}`} 
-          onClick={() => lastTask && history.push('/resume')}
+          onClick={() => lastTask && navigate('/resume')}
         >
           Resume where you left off
         </div>
-        <div className="menu-icon" onClick={() => history.push('/new-task')}>
+        <div className="menu-icon" onClick={() => navigate('/new-task')}>
           Enter a new task
         </div>
-        <div className="menu-icon" onClick={() => history.push('/history')}>
+        <div className="menu-icon" onClick={() => navigate('/history')}>
           View tasks history
         </div>
       </div>
