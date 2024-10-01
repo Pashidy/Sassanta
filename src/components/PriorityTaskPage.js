@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import '../styles/PriorityTaskPage.css';
 
 const PriorityTaskPage = ({ priorityName }) => {
+  console.log("Rendering PriorityTaskPage for:", priorityName); // Check if the component is loading
+
   const [tasks, setTasks] = useState([]);
   const [newTaskName, setNewTaskName] = useState('');
   const [taskTimers, setTaskTimers] = useState({});
-
-  console.log('PriorityTaskPage rendering for:', priorityName);
 
   // Handle adding a new task
   const handleAddTask = () => {
     const newTask = {
       id: Date.now(),
       name: newTaskName,
-      timer: 0, // Timer starts at 0
-      running: false, // Timer starts in a paused state
+      timer: 0,
+      running: false,
     };
     setTasks([...tasks, newTask]);
     setNewTaskName('');
@@ -58,6 +58,7 @@ const PriorityTaskPage = ({ priorityName }) => {
         />
         <button onClick={handleAddTask}>Add Task</button>
       </div>
+
       <div className="task-list">
         {tasks.map(task => (
           <div key={task.id} className="task-item">

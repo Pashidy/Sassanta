@@ -29,21 +29,21 @@
 }
 
 .urgent-important {
-  background-color: #FF6347;
+  background-color: #FF6347;  /* Tertiary color */
   grid-area: q1;
 }
 
 .not-urgent-important {
-  background-color: #20B2AA;
+  background-color: #20B2AA;   /* Tertiary color */
   grid-area: q2;
 }
 
 .urgent-not-important {
-  background-color: #4682B4;
+  background-color: #4682B4;   /* Tertiary color */
   grid-area: q3;
 }
 
 .not-urgent-not-important {
-  background-color: #DAA520;
+  background-color: #DAA520;   /* Tertiary color */
   grid-area: q4;
 }
